@@ -1,2 +1,2 @@
-# tasks
-PHP script to manage tasks and notes
+# Tasks
+Simple tasks & notes manager written in PHP, jQuery and Bootstrap using a custom flat file database.
