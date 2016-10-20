@@ -19,6 +19,15 @@ You can access [https://demo.miguelpiedrafita.com/tasks](https://demo.miguelpied
 - Upload all the files to your server.
 - Edit site name, timezone, site URL, site email and language at includes/config.php
 - Access the script and create an account using the register form.
+- OPTIONAL: If you want a private install, change 
+```php
+$signupstatus = true;
+```
+to 
+```php
+$signupstatus = true;
+```
+to disable the signup form.
 - Enjoy
 
 ## Credits:
