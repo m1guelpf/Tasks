@@ -46,10 +46,10 @@
 			<?php if ($signupstatus){echo '<div class="login-signup-content">'; } ?>
 				<form action="" method="post">
 					<div class="input-name"><h2><?php echo $usernameText; ?></h2></div>
-					<input type="text" name="username" id="username" value="" class="field-input" />
+					<input type="text" name="username" id="username" placeholder="username" value="" class="field-input" />
 
 					<div class="input-name input-margin"><h2><?php echo $passwordText; ?></h2></div>
-					<input type="password" name="password" id="password" value="" class="field-input" />
+					<input type="password" name="password" id="password" placeholder="password" value="" class="field-input" />
 
 					<button class="submit-btn" id="signin-btn"><?php echo $signInText; ?></button>
 
@@ -65,13 +65,13 @@
 			<div class="login-signup-content">
 				<form action="" method="post">
 					<div class="input-name"><h2><?php echo $usernameText; ?></h2></div>
-					<input type="text" name="username" id="newusername" value="" class="field-input" />
+					<input type="text" name="username" id="newusername" placeholder="username" value="" class="field-input" />
 
 					<div class="input-name input-margin"><h2><?php echo $emailText; ?></h2></div>
-					<input type="email" name="newemail" id="newemail" value="" class="field-input" />
+					<input type="email" name="newemail" id="newemail" placeholder="email" value="" class="field-input" />
 
 					<div class="input-name input-margin"><h2><?php echo $passwordText; ?></h2></div>
-					<input type="password" name="newpass" id="newpass" value="" class="field-input" />
+					<input type="password" name="newpass" id="newpass" placeholder="password" value="" class="field-input" />
 
 					<input type="hidden" name="newacc" id="newacc" value="" />
 					<button class="submit-btn" id="signup-btn"><?php echo $createAccText; ?></button>
@@ -90,7 +90,7 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label for="accountEmail"><?php echo $accEmailText; ?></label>
-								<input type="email" class="form-control" required="required" name="accountEmail" id="accountEmail" value="" />
+								<input type="email" class="form-control" required="required" name="accountEmail" id="accountEmail" placeholder="email" value="" />
 							</div>
 						</div>
 						<div class="modal-footer">
