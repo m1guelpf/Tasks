@@ -30,6 +30,11 @@ $signupstatus = true;
 to disable the signup form.
 - Enjoy
 
+## Support:
+
+- If you have any problems when instaling/using the script, [open a ticket](https://support.miguelpiedrafita.com] at my support center.
+- If you find any error in the code, [open an issue](https://github.com/m1guelpiedrafita/Tasks/issues/new) or, if you know how to solve it, [make a pull request](https://github.com/m1guelpiedrafita/Tasks/pulls/new).
+
 ## Credits:
 
 - [Miguel Piedrafita](https://projects.miguelpiedrafita.com)
