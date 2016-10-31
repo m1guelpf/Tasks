@@ -34,6 +34,7 @@ to disable the signup form.
 
 - If you have any problems when instaling/using the script, [open a ticket](https://support.miguelpiedrafita.com) at my support center.
 - If you find any error in the code, [open an issue](https://github.com/m1guelpiedrafita/Tasks/issues/new) or, if you know how to solve it, [make a pull request](https://github.com/m1guelpiedrafita/Tasks/compare).
+- If you have new ideas for this script, go ahead and post them in [MP Feedback](http://feedback.miguelpiedrafita.com), under the "Tasks" section.
 
 ## Credits:
 
