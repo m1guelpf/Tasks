@@ -37,7 +37,7 @@
 				$tabledef =& $tables[$tablename];
 				foreach ($tabledef as $colname => $discard) {
 					$coldef =& $tabledef[$colname];
-					if (is_a($coldef, 'JoinColumn') or is_subclass_of($coldef, 'JoinColumn')) {
+					if (is_a($coldef, 'JoinColumn') || is_subclass_of($coldef, 'JoinColumn')) {
 						TableUtils::resolveColumnJoin($coldef, $tables);
 					}
 				}
