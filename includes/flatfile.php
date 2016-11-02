@@ -393,7 +393,7 @@
 
 			$cmpfunc = $this->compare_type;
 			if ($cmpfunc == DEFAULT_COMPARISON) {
-				if ($rowSchema != null) {
+				if ($rowSchema !== null) {
 					$cmpfunc = get_comparison_type_for_col_type($rowSchema[$this->field]);
 				} else {
 					$cmpfunc = STRING_COMPARISON;
