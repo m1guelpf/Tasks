@@ -1,8 +1,8 @@
 <?php
-	$pageTitle = $newNotePageTitle;
-	$newnote = 'true';
-	$jsFile = 'newNote';
-	include 'includes/header.php';
+    $pageTitle = $newNotePageTitle;
+    $newnote = 'true';
+    $jsFile = 'newNote';
+    include 'includes/header.php';
 ?>
 	<div class="wrapper">
 		<?php include 'includes/navigation.php'; ?>

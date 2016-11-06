@@ -1,56 +1,92 @@
 <?php
-	$taskId = $_GET['taskId'];
+    $taskId = $_GET['taskId'];
 
-	require('includes/flatfile.php');
+    require 'includes/flatfile.php';
 
-	$db = new Flatfile();
-	$db->datadir = 'data/tasks/';
+    $db = new Flatfile();
+    $db->datadir = 'data/tasks/';
 
-	define('USER_ID',		0);
-	define('TASK_ID',		1);
-	define('TASK_TITLE',	2);
-	define('TASK_DATE',		3);
-	define('DATE_DUE',		4);
-	define('TASK_TYPE',		5);
-	define('REFERENCE',		6);
-	define('PERC_COMPLETE',	7);
-	define('DATE_COMPLTED',	8);
-	define('TASK_DESC',		9);
-	define('TASK_NOTES',	10);
-	define('TASK_STATUS',	11);
-	define('UPDATE_DATE',	12);
+    define('USER_ID', 0);
+    define('TASK_ID', 1);
+    define('TASK_TITLE', 2);
+    define('TASK_DATE', 3);
+    define('DATE_DUE', 4);
+    define('TASK_TYPE', 5);
+    define('REFERENCE', 6);
+    define('PERC_COMPLETE', 7);
+    define('DATE_COMPLTED', 8);
+    define('TASK_DESC', 9);
+    define('TASK_NOTES', 10);
+    define('TASK_STATUS', 11);
+    define('UPDATE_DATE', 12);
 
-	// Get the Task Data
-	$task = $db->selectWhere(
-		'tasks.txt',
-		new SimpleWhereClause(TASK_ID, '=', $taskId)
-	);
-	$taskdata = $db->selectAll($taskId.'.txt');
+    // Get the Task Data
+    $task = $db->selectWhere(
+        'tasks.txt',
+        new SimpleWhereClause(TASK_ID, '=', $taskId)
+    );
+    $taskdata = $db->selectAll($taskId.'.txt');
 
-	// Set some variables to empty
-	$taskTitle = $dateAssigned = $dateDue = $taskType = $taskRef = $percComp = $dateComp = $taskDesc = $taskNotes = $taskStatus = $updatDate = '';
+    // Set some variables to empty
+    $taskTitle = $dateAssigned = $dateDue = $taskType = $taskRef = $percComp = $dateComp = $taskDesc = $taskNotes = $taskStatus = $updatDate = '';
 
-	foreach ($task as $k => $v) {
-		$taskTitle = $v[2];
-		if ($v[3] != '') { $dateAssigned = dbDateFormat($v[3]); } else { $dateAssigned = ''; }
-		if ($v[4] != '') { $dateDue = dbDateFormat($v[4]); } else { $dateDue = ''; }
-		if ($v[5] != '') { $taskType = decodeIt($v[5]); } else { $taskType = ''; }
-		if ($v[6] != '') { $taskRef = decodeIt($v[6]); } else { $taskRef = ''; }
-		if ($v[8] != '') { $dateComp = dbDateFormat($v[8]); } else { $dateComp = ''; }
-	}
+    foreach ($task as $k => $v) {
+        $taskTitle = $v[2];
+        if ($v[3] != '') {
+            $dateAssigned = dbDateFormat($v[3]);
+        } else {
+            $dateAssigned = '';
+        }
+        if ($v[4] != '') {
+            $dateDue = dbDateFormat($v[4]);
+        } else {
+            $dateDue = '';
+        }
+        if ($v[5] != '') {
+            $taskType = decodeIt($v[5]);
+        } else {
+            $taskType = '';
+        }
+        if ($v[6] != '') {
+            $taskRef = decodeIt($v[6]);
+        } else {
+            $taskRef = '';
+        }
+        if ($v[8] != '') {
+            $dateComp = dbDateFormat($v[8]);
+        } else {
+            $dateComp = '';
+        }
+    }
 
-	foreach ($taskdata as $k => $v) {
-		if ($v[9] != '') { $taskDesc = decodeIt($v[9]); } else { $taskDesc = ''; }
-		if ($v[10] != '') { $taskNotes = decodeIt($v[10]); } else { $taskNotes = ''; }
-		if ($v[11] != '') { $taskStatus = decodeIt($v[11]); } else { $taskStatus = ''; }
-		if ($v[12] != '') { $updatDate = strtotime($v[12]); } else { $updatDate = ''; }
-	}
+    foreach ($taskdata as $k => $v) {
+        if ($v[9] != '') {
+            $taskDesc = decodeIt($v[9]);
+        } else {
+            $taskDesc = '';
+        }
+        if ($v[10] != '') {
+            $taskNotes = decodeIt($v[10]);
+        } else {
+            $taskNotes = '';
+        }
+        if ($v[11] != '') {
+            $taskStatus = decodeIt($v[11]);
+        } else {
+            $taskStatus = '';
+        }
+        if ($v[12] != '') {
+            $updatDate = strtotime($v[12]);
+        } else {
+            $updatDate = '';
+        }
+    }
 
-	$pageTitle = $viewTaskPageTitle;
-	$addCss = '<link href="css/datetimepicker.css" rel="stylesheet">';
-	$datePicker = 'true';
-	$jsFile = 'viewTask';
-	include 'includes/header.php';
+    $pageTitle = $viewTaskPageTitle;
+    $addCss = '<link href="css/datetimepicker.css" rel="stylesheet">';
+    $datePicker = 'true';
+    $jsFile = 'viewTask';
+    include 'includes/header.php';
 ?>
 	<div class="wrapper">
 		<?php include 'includes/navigation.php'; ?>
