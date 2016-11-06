@@ -1,10 +1,10 @@
 <?php
-	$pageTitle = $newTaskPageTitle;
-	$new = 'true';
-	$addCss = '<link href="css/datetimepicker.css" rel="stylesheet">';
-	$datePicker = 'true';
-	$jsFile = 'newTask';
-	include 'includes/header.php';
+    $pageTitle = $newTaskPageTitle;
+    $new = 'true';
+    $addCss = '<link href="css/datetimepicker.css" rel="stylesheet">';
+    $datePicker = 'true';
+    $jsFile = 'newTask';
+    include 'includes/header.php';
 ?>
 	<div class="wrapper">
 		<?php include 'includes/navigation.php'; ?>

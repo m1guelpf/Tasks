@@ -1,20 +1,22 @@
 <?php
-	if(!isset($_SESSION)) session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
 
-	// Signed In User check
-	if (isset($_SESSION['st']['userId'])) {
-		header ('Location: index.php');
-		exit;
-	}
+    // Signed In User check
+    if (isset($_SESSION['st']['userId'])) {
+        header('Location: index.php');
+        exit;
+    }
 
-	// Include Settings
-	include('includes/config.php');
+    // Include Settings
+    include 'includes/config.php';
 
-	// Include Functions
-	include('includes/functions.php');
+    // Include Functions
+    include 'includes/functions.php';
 
-	// Include Sessions & Localizations
-	include('includes/sessions.php');
+    // Include Sessions & Localizations
+    include 'includes/sessions.php';
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
@@ -43,7 +45,9 @@
 
 		<div class="login-signup l-attop" id="login">
 			<div class="login-signup-title"><?php echo $signInText; ?></div>
-			<?php if ($signupstatus){echo '<div class="login-signup-content">'; } ?>
+			<?php if ($signupstatus) {
+    echo '<div class="login-signup-content">';
+} ?>
 				<form action="" method="post">
 					<div class="input-name"><h2><?php echo $usernameText; ?></h2></div>
 					<input type="text" name="username" id="username" placeholder="username" value="" class="field-input" />
@@ -58,9 +62,12 @@
 					</div>
 				</form>
 			</div>
-		<?php if ($signupstatus){echo '</div>'; } ?>
+		<?php if ($signupstatus) {
+    echo '</div>';
+} ?>
 
-		<?php if ($signupstatus){echo '<div class="login-signup s-atbottom" id="signup">
+		<?php if ($signupstatus) {
+    echo '<div class="login-signup s-atbottom" id="signup">
 			<div class="login-signup-title"><?php echo $signUpText; ?></div>
 			<div class="login-signup-content">
 				<form action="" method="post">
@@ -77,7 +84,8 @@
 					<button class="submit-btn" id="signup-btn"><?php echo $createAccText; ?></button>
 				</form>
 			</div>
-		</div>'; } ?>
+		</div>';
+} ?>
 
 		<div class="modal fade" id="resetPassword" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">

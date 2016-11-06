@@ -11,7 +11,9 @@
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
-	<?php if (isset($addCss)) { echo $addCss; } ?>
+	<?php if (isset($addCss)) {
+    echo $addCss;
+} ?>
 	<link rel="stylesheet" type="text/css" href="css/meowsa.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/custom.css" />
 

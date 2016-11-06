@@ -1,42 +1,58 @@
 <?php
-	$noteId = $_GET['noteId'];
+    $noteId = $_GET['noteId'];
 
-	require('includes/flatfile.php');
+    require 'includes/flatfile.php';
 
-	$db = new Flatfile();
-	$db->datadir = 'data/notes/';
+    $db = new Flatfile();
+    $db->datadir = 'data/notes/';
 
-	define('USER_ID',		0);
-	define('NOTE_ID',		1);
-	define('NOTE_TITLE',	2);
-	define('NOTE_DATE',		3);
-	define('NOTE_TEXT',		4);
-	define('UPDATE_DATE',	5);
+    define('USER_ID', 0);
+    define('NOTE_ID', 1);
+    define('NOTE_TITLE', 2);
+    define('NOTE_DATE', 3);
+    define('NOTE_TEXT', 4);
+    define('UPDATE_DATE', 5);
 
-	// Get the Note Data
-	$note = $db->selectWhere(
-		'notes.txt',
-		new SimpleWhereClause(NOTE_ID, '=', $noteId)
-	);
-	$notedata = $db->selectAll($noteId.'.txt');
+    // Get the Note Data
+    $note = $db->selectWhere(
+        'notes.txt',
+        new SimpleWhereClause(NOTE_ID, '=', $noteId)
+    );
+    $notedata = $db->selectAll($noteId.'.txt');
 
-	// Set some variables to empty
-	$noteTitle = $noteDate = $noteText = $lastUpd = '';
+    // Set some variables to empty
+    $noteTitle = $noteDate = $noteText = $lastUpd = '';
 
-	foreach ($note as $k => $v) {
-		$noteTitle = $v[2];
-		if ($v[3] != '') { $noteDate = dateFormat($v[3]); } else { $dateFormat = ''; }
-		if ($v[5] != '') { $updated = dateFormat($v[5]); } else { $updated = ''; }
-		if ($v[5] != '') { $lastUpd = dbDateFormat($v[5]); } else { $lastUpd = ''; }
-	}
+    foreach ($note as $k => $v) {
+        $noteTitle = $v[2];
+        if ($v[3] != '') {
+            $noteDate = dateFormat($v[3]);
+        } else {
+            $dateFormat = '';
+        }
+        if ($v[5] != '') {
+            $updated = dateFormat($v[5]);
+        } else {
+            $updated = '';
+        }
+        if ($v[5] != '') {
+            $lastUpd = dbDateFormat($v[5]);
+        } else {
+            $lastUpd = '';
+        }
+    }
 
-	foreach ($notedata as $k => $v) {
-		if ($v[4] != '') { $noteText = decodeIt($v[4]); } else { $noteText = ''; }
-	}
+    foreach ($notedata as $k => $v) {
+        if ($v[4] != '') {
+            $noteText = decodeIt($v[4]);
+        } else {
+            $noteText = '';
+        }
+    }
 
-	$pageTitle = $viewNotePageTitle;
-	$jsFile = 'viewNote';
-	include 'includes/header.php';
+    $pageTitle = $viewNotePageTitle;
+    $jsFile = 'viewNote';
+    include 'includes/header.php';
 ?>
 	<div class="wrapper">
 		<?php include 'includes/navigation.php'; ?>

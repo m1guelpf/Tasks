@@ -1,11 +1,31 @@
 <?php
-	// Set the Active State on the Navigation
-	$homeNav = $newNav = $notesNav = $newnotesNav = $profileNav = '';
-	if (isset($home)) { $homeNav = 'active'; } else { $homeNav = ''; }
-	if (isset($new)) { $newNav = 'active'; } else { $newNav = ''; }
-	if (isset($notes)) { $notesNav = 'active'; } else { $notesNav = ''; }
-	if (isset($newnote)) { $newnotesNav = 'active'; } else { $newnotesNav = ''; }
-	if (isset($profile)) { $profileNav = 'active'; } else { $profileNav = ''; }
+    // Set the Active State on the Navigation
+    $homeNav = $newNav = $notesNav = $newnotesNav = $profileNav = '';
+    if (isset($home)) {
+        $homeNav = 'active';
+    } else {
+        $homeNav = '';
+    }
+    if (isset($new)) {
+        $newNav = 'active';
+    } else {
+        $newNav = '';
+    }
+    if (isset($notes)) {
+        $notesNav = 'active';
+    } else {
+        $notesNav = '';
+    }
+    if (isset($newnote)) {
+        $newnotesNav = 'active';
+    } else {
+        $newnotesNav = '';
+    }
+    if (isset($profile)) {
+        $profileNav = 'active';
+    } else {
+        $profileNav = '';
+    }
 ?>
 	<div class="sidebar">
 		<div class="title"><?php echo $siteName; ?></div>

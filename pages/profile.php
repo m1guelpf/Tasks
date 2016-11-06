@@ -1,35 +1,39 @@
 <?php
-	require('includes/flatfile.php');
+    require 'includes/flatfile.php';
 
-	$db = new Flatfile();
-	$db->datadir = 'data/';
+    $db = new Flatfile();
+    $db->datadir = 'data/';
 
-	define('USER_ID',		0);
-	define('USERNAME',		1);
-	define('PASSWORD',		2);
-	define('USER_EMAIL',	3);
-	define('DATE_CREATED',	4);
+    define('USER_ID', 0);
+    define('USERNAME', 1);
+    define('PASSWORD', 2);
+    define('USER_EMAIL', 3);
+    define('DATE_CREATED', 4);
 
-	// Get the User's Account Data
-	$user = $db->selectWhere(
-		'users.txt',
-		new SimpleWhereClause(USER_ID, '=', $st_userId)
-	);
+    // Get the User's Account Data
+    $user = $db->selectWhere(
+        'users.txt',
+        new SimpleWhereClause(USER_ID, '=', $st_userId)
+    );
 
-	// Set some variables to empty
-	$uname = $old = $uemail = $createdate = '';
+    // Set some variables to empty
+    $uname = $old = $uemail = $createdate = '';
 
-	foreach ($user as $k => $v) {
-		$uname = $v[1];
-		$old = $v[2];
-		$uemail = $v[3];
-		if ($v[4] != '') { $createdate = dateFormat($v[4]); } else { $createdate = ''; }
-	}
+    foreach ($user as $k => $v) {
+        $uname = $v[1];
+        $old = $v[2];
+        $uemail = $v[3];
+        if ($v[4] != '') {
+            $createdate = dateFormat($v[4]);
+        } else {
+            $createdate = '';
+        }
+    }
 
-	$pageTitle = $profilePageTitle;
-	$profile = 'true';
-	$jsFile = 'profile';
-	include 'includes/header.php';
+    $pageTitle = $profilePageTitle;
+    $profile = 'true';
+    $jsFile = 'profile';
+    include 'includes/header.php';
 ?>
 	<div class="wrapper">
 		<?php include 'includes/navigation.php'; ?>
@@ -90,7 +94,7 @@
 					</div>
 
 					<input type="hidden" name="old" id="old" value="<?php echo $old; ?>" />
-					<input type="hidden" name="now" id="now" value="<?php echo date("Y-m-d H:i:s"); ?>" />
+					<input type="hidden" name="now" id="now" value="<?php echo date('Y-m-d H:i:s'); ?>" />
 					<button type="input" name="submit" value="updProfile" id="updProfile" class="btn btn-sm btn-success btn-icon"><i class="fa fa-check-square-o"></i> <?php echo $updateProfileText; ?></button>
 				</form>
 			</div>

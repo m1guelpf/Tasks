@@ -1,25 +1,25 @@
 <?php
-	require('includes/flatfile.php');
+    require 'includes/flatfile.php';
 
-	$db = new Flatfile();
-	$db->datadir = 'data/notes/';
+    $db = new Flatfile();
+    $db->datadir = 'data/notes/';
 
-	define('USER_ID',		0);
-	define('NOTE_ID',		1);
-	define('NOTE_TITLE',	2);
-	define('NOTE_DATE',		3);
-	define('NOTE_TEXT',		4);
-	define('UPDATE_DATE',	5);
+    define('USER_ID', 0);
+    define('NOTE_ID', 1);
+    define('NOTE_TITLE', 2);
+    define('NOTE_DATE', 3);
+    define('NOTE_TEXT', 4);
+    define('UPDATE_DATE', 5);
 
-	// Ge the Logged In User's Note Data
+    // Ge the Logged In User's Note Data
     $res = $db->selectWhere('notes.txt', new SimpleWhereClause(USER_ID, '=', $st_userId));
 
-	$pageTitle = $notesFieldText;
-	$notes = 'true';
-	$addCss = '<link href="css/dataTables.css" rel="stylesheet">';
-	$dataTables = 'true';
-	$jsFile = 'notes';
-	include 'includes/header.php';
+    $pageTitle = $notesFieldText;
+    $notes = 'true';
+    $addCss = '<link href="css/dataTables.css" rel="stylesheet">';
+    $dataTables = 'true';
+    $jsFile = 'notes';
+    include 'includes/header.php';
 ?>
 	<div class="wrapper">
 		<?php include 'includes/navigation.php'; ?>
@@ -37,7 +37,8 @@
 			</div>
 
 			<div class="page-content mt-30">
-				<?php if (!empty($res)) { ?>
+				<?php if (!empty($res)) {
+    ?>
 					<table id="notes" class="display" cellspacing="0">
 						<thead>
 							<tr>
@@ -49,12 +50,11 @@
 						</thead>
 						<tbody>
 							<?php
-								foreach ($res as $k => $v) {
-									$noteId	= $v[1];
-									$noteTitle	= $v[2];
-									$noteDate = shortMonthFormat($v[3]);
-									$updDate = shortMonthTimeFormat($v[5]);
-							?>
+                                foreach ($res as $k => $v) {
+                                    $noteId = $v[1];
+                                    $noteTitle = $v[2];
+                                    $noteDate = shortMonthFormat($v[3]);
+                                    $updDate = shortMonthTimeFormat($v[5]); ?>
 									<tr>
 										<td>
 											<a href="index.php?page=viewNote&noteId=<?php echo $noteId; ?>" data-toggle="tooltip" data-placement="right" title="<?php echo $viewUpdateNoteText; ?>">
@@ -71,11 +71,13 @@
 										</td>
 									</tr>
 							<?php
-								}
-							?>
+
+                                } ?>
 						</tbody>
 					</table>
-				<?php } else { ?>
+				<?php 
+} else {
+    ?>
 					<div class="alertMsg warning mt-30 mb-10">
 						<div class="msgIcon pull-left">
 							<i class="fa fa-warning"></i>
@@ -83,7 +85,8 @@
 						<?php echo $noNotesText; ?>
 					</div>
 					<p><a href="index.php?page=newNote" class="btn btn-lg btn-info"><?php echo $addOneNowText; ?></a></p>
-				<?php } ?>
+				<?php 
+} ?>
 			</div>
 		</div>
 	</div>
