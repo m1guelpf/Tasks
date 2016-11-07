@@ -25,7 +25,7 @@ $signupstatus = true;
 ```
 to 
 ```php
-$signupstatus = true;
+$signupstatus = false;
 ```
 to disable the signup form.
 - Enjoy
