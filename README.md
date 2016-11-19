@@ -15,7 +15,7 @@ You can access [https://demo.miguelpiedrafita.com/tasks](https://demo.miguelpied
 
 ## Installation:
 
-- Download lastest release from [here](https://github.com/m1guelpiedrafita/Tasks/archive/master.zip).
+- Download lastest release from [here](https://github.com/m1guelpf/Tasks/archive/master.zip).
 - Upload all the files to your server.
 - Edit site name, timezone, site URL, site email and language at includes/config.php
 - Access the script and create an account using the register form.
