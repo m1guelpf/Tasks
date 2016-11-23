@@ -1,4 +1,4 @@
-# Tasks
+# Tasks ![StyleCI Badge](https://styleci.io/repos/74145671/shield?style=flat-square&branch=master)
 Simple tasks & notes manager written in PHP, jQuery and Bootstrap using a custom flat file database.
 
 ## What is Tasks?
