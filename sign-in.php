@@ -45,7 +45,7 @@
 
 		<div class="login-signup l-attop" id="login">
 			<div class="login-signup-title"><?php echo $signInText; ?></div>
-			<?php if ($signupstatus) {
+			<?php if ($signupstatus == 'true') {
     echo '<div class="login-signup-content">';
 } ?>
 				<form action="" method="post">
@@ -62,11 +62,11 @@
 					</div>
 				</form>
 			</div>
-		<?php if ($signupstatus) {
+		<?php if ($signupstatus == 'true') {
     echo '</div>';
 } ?>
 
-		<?php if ($signupstatus) {
+		<?php if ($signupstatus == 'true') {
     echo '<div class="login-signup s-atbottom" id="signup">
 			<div class="login-signup-title"><?php echo $signUpText; ?></div>
 			<div class="login-signup-content">
