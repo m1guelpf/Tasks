@@ -1,0 +1,33 @@
+{
+  "name": "Tasks",
+  "description": "Simple tasks & notes manager written in PHP, jQuery and Bootstrap using a custom flat file database.",
+  "repository": "https://github.com/m1guelpf/Tasks",
+  "keywords": ["Tasks", "php", "m1guelpf"],
+  "website": "https://projects.miguelpiedrafita.com/Tasks",
+  "env": {
+    "SITENAME": {
+      "description": "The Title of your site",
+      "value": "Heroku Tasks",
+      "required": true
+    },
+    "APPURL": {
+      "description": "Re-enter your app name from above",
+      "required": true
+    },
+    "EMAIL": {
+      "description": "Your email",
+      "value": "your-email@example.com",
+      "required": true
+    },
+    "SIGNUP": {
+      "description": "Is signup enabled?",
+      "value": "true",
+      "required": true
+    },
+    "PEPPER": {
+      "description": "A ramdom key for securing things",
+      "generator": "secret",
+      "required": true
+    }
+  }
+}
