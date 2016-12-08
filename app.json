@@ -20,7 +20,7 @@
       "required": true
     },
     "SIGNUP": {
-      "description": "Is signup enabled?",
+      "description": "Is signup enabled? (true/false)",
       "value": "true",
       "required": true
     },
