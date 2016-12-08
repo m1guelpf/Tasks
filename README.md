@@ -14,7 +14,10 @@ You can access [https://demo.miguelpiedrafita.com/tasks](https://demo.miguelpied
 - PHP 5.5.9 or higher
 
 ## Installation:
+### Deploy to Heroku:
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/m1guelpf/Tasks/tree/heroku)
 
+### Manual install:
 - Download lastest release from [here](https://github.com/m1guelpf/Tasks/archive/master.zip).
 - Upload all the files to your server.
 - Edit site name, timezone, site URL, site email and language at includes/config.php
