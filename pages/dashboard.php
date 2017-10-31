@@ -107,13 +107,12 @@
 										</td>
 									</tr>
 							<?php
-
                                 } ?>
 						</tbody>
 					</table>
-				<?php 
+				<?php
 } else {
-    ?>
+                                    ?>
 					<div class="alertMsg warning mt-30 mb-10">
 						<div class="msgIcon pull-left">
 							<i class="fa fa-warning"></i>
@@ -121,8 +120,8 @@
 						<?php echo $noTasksText; ?>
 					</div>
 					<p><a href="index.php?page=newTask" class="btn btn-lg btn-info"><?php echo $addOneNowText; ?></a></p>
-				<?php 
-} ?>
+				<?php
+                                } ?>
 			</div>
 		</div>
 	</div>
