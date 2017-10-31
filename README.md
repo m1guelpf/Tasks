@@ -7,17 +7,18 @@ Simple tasks & notes manager written in PHP, jQuery and Bootstrap using a custom
 
 Tasks is an script that allows you to manage tasks and notes.
 
-## Demo:
-
-You can access [https://demo.miguelpiedrafita.com/tasks](https://demo.miguelpiedrafita.com/tasks) and create an account to test the script. NOTE: In the demo, all the data is deleted periodically. In the script, this doesn't happen.
-
 ## Requirements:
 
 - PHP 5.5.9 or higher
 
 ## Installation:
+
 ### Deploy to Heroku:
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/m1guelpf/Tasks/tree/heroku)
+
+### Managed Install:
+
+You can purchase a managed install on [Gumroad](https://gum.co/tasks-installation).
 
 ### Manual install:
 - Download lastest release from [here](https://github.com/m1guelpf/Tasks/archive/master.zip).
