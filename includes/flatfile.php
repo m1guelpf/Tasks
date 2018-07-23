@@ -42,7 +42,7 @@
         public $schemata;
         public $datadir;
 
-        public function Flatfile()
+        public function __construct()
         {
             $this->schemata = [];
         }
@@ -172,8 +172,12 @@
         public function insertWithAutoId($tablename, $idField, $newRow)
         {
             $lockfp = $this->getLock($tablename);
-            $rows = $this->selectWhere($tablename, null, 1,
-                    new OrderBy($idField, DESCENDING, INTEGER_COMPARISON));
+            $rows = $this->selectWhere(
+                $tablename,
+                null,
+                1,
+                    new OrderBy($idField, DESCENDING, INTEGER_COMPARISON)
+            );
             if ($rows) {
                 $newId = $rows[0][$idField] + 1;
             } else {
@@ -210,8 +214,11 @@
          */
         public function updateRowById($tablename, $idField, $updatedRow)
         {
-            $this->updateSetWhere($tablename, $updatedRow,
-                new SimpleWhereClause($idField, '=', $updatedRow[$idField]));
+            $this->updateSetWhere(
+                $tablename,
+                $updatedRow,
+                new SimpleWhereClause($idField, '=', $updatedRow[$idField])
+            );
         }
 
         /*
@@ -388,7 +395,7 @@
         /*
          * Contructs a new NotWhere object
          */
-        public function NotWhere($whereclause)
+        public function __construct($whereclause)
         {
             $this->clause = $whereclause;
         }
@@ -422,7 +429,7 @@
          * STRING_COMPARISON (default), NUMERIC COMPARISON or INTEGER_COMPARISON
          *
          */
-        public function SimpleWhereClause($field, $operator, $value, $compare_type = DEFAULT_COMPARISON)
+        public function __construct($field, $operator, $value, $compare_type = DEFAULT_COMPARISON)
         {
             $this->field = $field;
             $this->operator = $operator;
@@ -487,7 +494,7 @@
          * @param array $list		List of items
          * @param string $compare_type Comparison type, string by default.
          */
-        public function ListWhereClause($field, $list, $compare_type = DEFAULT_COMPARISON)
+        public function __construct($field, $list, $compare_type = DEFAULT_COMPARISON)
         {
             $this->list = $list;
             $this->field = (int) $field;
@@ -558,7 +565,7 @@
          *
          * @param WhereClause $whereClause,... optional unlimited list of WhereClause objects to be added
          */
-        public function OrWhereClause()
+        public function __construct()
         {
             $this->clauses = func_get_args();
         }
@@ -587,7 +594,7 @@
          *
          * @param WhereClause $whereClause,... optional unlimited list of WhereClause objects to be added
          */
-        public function AndWhereClause()
+        public function __construct()
         {
             $this->clauses = func_get_args();
         }
@@ -612,7 +619,7 @@
          * @param int $compareAs	Comparison type: DEFAULT_COMPARISON, STRING_COMPARISON, INTEGER_COMPARISION,
          * or NUMERIC_COMPARISON, or the name of a user defined function that you want to use for doing the comparison.
          */
-        public function OrderBy($field, $orderType, $compareAs = DEFAULT_COMPARISON)
+        public function __construct($field, $orderType, $compareAs = DEFAULT_COMPARISON)
         {
             $this->field = $field;
             $this->orderType = $orderType;
@@ -636,7 +643,7 @@
          * @param mixed $orderBy	An OrderBy object or an array of them
          * @param array $rowSchema	Option row schema
          */
-        public function Orderer($orderBy, $rowSchema = null)
+        public function __construct($orderBy, $rowSchema = null)
         {
             if (!is_array($orderBy)) {
                 $orderBy = [$orderBy];
