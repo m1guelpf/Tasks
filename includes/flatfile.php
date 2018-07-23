@@ -105,7 +105,7 @@
                     if ($count >= $limit[0]) {
                         $results[] = $row;
                     }
-                    ++$count;
+                    $count++;
                     if (($count >= $limit[1]) && ($limit[1] != -1)) {
                         break;
                     }
@@ -232,7 +232,7 @@
         {
             $schema = $this->getSchema($tablename);
             $lockfp = $this->getLock($tablename);
-            for ($i = 0; $i < count($this->tables[$tablename]); ++$i) {
+            for ($i = 0; $i < count($this->tables[$tablename]); $i++) {
                 if ($whereClause === null || $whereClause->testRow($this->tables[$tablename][$i], $schema)) {
                     foreach ($newFields as $k => $v) {
                         $this->tables[$tablename][$i][$k] = $v;
@@ -255,7 +255,7 @@
         {
             $schema = $this->getSchema($tablename);
             $lockfp = $this->getLock($tablename);
-            for ($i = count($this->tables[$tablename]) - 1; $i >= 0; --$i) {
+            for ($i = count($this->tables[$tablename]) - 1; $i >= 0; $i--) {
                 if ($whereClause === null || $whereClause->testRow($this->tables[$tablename][$i], $schema)) {
                     unset($this->tables[$tablename][$i]);
                 }
@@ -309,7 +309,7 @@
                 $keys = array_keys($row);
                 rsort($keys, SORT_NUMERIC);
                 $max = $keys[0];
-                for ($i = 0; $i <= $max; ++$i) {
+                for ($i = 0; $i <= $max; $i++) {
                     if ($i > 0) {
                         $output .= "\t";
                     }
